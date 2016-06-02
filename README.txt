@@ -3,7 +3,7 @@ This is a simple timer for speedrunning GTA San Andreas.
 It automatically resets the time at the first cutscene, and starts the timer
 after it, by reading game memory.
 
-Memory addresses are hardcoded for version 1.01 and will probably have to be
+Memory addresses are hardcoded for version 1.0 and will probably have to be
 changed for other versions.
 
 The program also supports manual clock resetting and pausing by pressing

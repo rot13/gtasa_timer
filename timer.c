@@ -142,8 +142,8 @@ DWORD WINAPI timer_thread(LPVOID lpParameter) {
         data d;
         while(
             (proc = GetProcessByName("gta_sa.exe")) &&
-            ReadProcessMemory(proc, (LPCVOID)0xBE5284, &d, sizeof(data), NULL) &&
-            ReadProcessMemory(proc, (LPCVOID)0xBE8300, &keytab, sizeof(keytab), NULL)
+            ReadProcessMemory(proc, (LPCVOID)0xB70150, &d, sizeof(data), NULL) &&
+            ReadProcessMemory(proc, (LPCVOID)0xB72F38, &keytab, sizeof(keytab), NULL)
         ) {
             CloseHandle(proc);
             if (keytab[reset_key] && !reset_state) {
