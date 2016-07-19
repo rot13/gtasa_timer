@@ -170,6 +170,7 @@ DWORD WINAPI timer_thread(LPVOID lpParameter) {
             Sleep(40);
             hotkey = 0;
         }
+        if (proc) CloseHandle(proc);
     } while(1);
 }
 
