@@ -194,7 +194,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_PAINT:
     {
         COLORREF g_white = RGB(255, 255, 255);
-        COLORREF g_black = RGB(0, 0, 0);
+        COLORREF g_black = RGB(1, 1, 1);
         PAINTSTRUCT ps;
         HDC hDC;
         hDC=BeginPaint(hwnd,&ps);
@@ -244,7 +244,7 @@ int WINAPI WinMain(HINSTANCE hIns, HINSTANCE hPrev, LPSTR lpszArgument, int nCmd
     wc.lpszMenuName = NULL;
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
-    wc.hbrBackground=CreateSolidBrush(RGB(1, 1, 1));
+    wc.hbrBackground=CreateSolidBrush(RGB(0, 0, 0));
     RegisterClassEx(&wc);
     hwnd=CreateWindow(szClassName,szClassName,WS_OVERLAPPEDWINDOW,0,0,148,65,HWND_DESKTOP,NULL,hIns,NULL);
     ShowWindow(hwnd, nCmdShow);
