@@ -172,13 +172,16 @@ DWORD WINAPI timer_thread(LPVOID lpParameter) {
     } while(1);
 }
 
+extern char font_data[];
+extern int font_data_size;
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     static HFONT hf;
     if (!hf) {
-        AddFontResourceEx("digital-7 (mono).ttf",
-                          FR_PRIVATE,
-                          NULL);
+        DWORD num_added = 0;
+        HANDLE fonts = AddFontMemResourceEx(font_data, font_data_size, 0, &num_added);
+        if (fonts == 0 || num_added == 0) PostQuitMessage(0);
         hf = CreateFont(30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Digital-7");
     }
     switch(message)
