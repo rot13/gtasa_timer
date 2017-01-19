@@ -161,8 +161,6 @@ DWORD WINAPI timer_thread(LPVOID lpParameter) {
             if (d.h == 6 && d.m == 30 && d.s == 0 && d.unk2 == 1 && state == 1) {
                 state = 2; // start timer
                 ts = GetTickCount();
-            } else if (d.t_ms == 0 && d.h == 8 && d.m == 0 && d.s == 0 && d.unk2 == 1) {
-                state = 1; // reset timer
             }
             write_time();
             pause_state = keytab[pause_key];
